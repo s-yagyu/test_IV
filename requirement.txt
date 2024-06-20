@@ -1,0 +1,10 @@
+
+numpy
+scipy
+mutplotlib
+pandas
+
+# GitHub リポジトリから "pynverse" パッケージをインストール
+# https://github.com/alvarosg/pynverse
+
+git+https://github.com/alvarosg/pynverse.git
