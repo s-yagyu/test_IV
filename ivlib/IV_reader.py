@@ -71,8 +71,23 @@ class IVReader():
                             name_lists=self.all_data_dict["fname"], 
                             comment_lists=self.all_data_dict["judge"], 
                             sig=1, separator=separater, save=save)
-
-
+    
+    def focuse_data(self, all_or_select='select', index=0, plot=True, separater=5):
+        try:
+            if all_or_select == 'select':
+                f_data = self.select_dict['df'][index]
+            else:
+                f_data = self.all_data_dict['df'][index]
+        except:
+            print('error Over index')
+            return None, None
+        _, df1, df2 = _divide_df(f_data, target=separater)
+        
+        if plot:
+            fig3plot(df1['V1'],df1['I1'],df2['V1'],df2['I1'],comment=f'index:{index}')  
+            
+        return df1,df2
+            
 
 
 # Classを構成する部品
@@ -668,7 +683,7 @@ def fig3plot(xdata,ydata,x2data,y2data,comment=None):
     axs[2].set_ylabel('ln(Current)')
     axs[2].grid()        
 
-    if comment is None:
+    if comment is not None:
         axs[0].legend(title=f'{comment}')
         axs[1].legend(title=f'{comment}')
         axs[2].legend(title=f'{comment}')
