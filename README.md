@@ -25,12 +25,17 @@ IG88--- IG88_C-V Sweep [_ 2 -17_Subsite_0__Subsite_(57) ; 2022-07-06 11_53_44 AM
 #### 利用方法
 
 ##### 必要なモジュール
-- numpy, scipy, pandas, matplotlib, 
-
-- Data_read.ipynbのテンプレートを利用する
+- numpy, scipy, pandas, matplotlib, jupyter
+- pynverse 
+```
+pip install git+https://github.com/alvarosg/pynverse.git
+```
+###### IV dataの読み込み・可視化
+- IV_data_read_template.ipynbのテンプレートを利用する
 - テンプレートをコピーして、名前を変更する
-- テンプレートと同じ階層にdata_reader2.pyを配置する
-（将来的には、githubからpipでインストールできるようにする。gitのインストールが必要）
 - テンプレートに従って進める
+
+###### Schottkyのシミュレーション
+
 
 
